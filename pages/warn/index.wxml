@@ -1,0 +1,81 @@
+<!--pages/warn/index.wxml-->
+<view class="container">
+<view>厕所名称:{{title}}\n</view>
+<view>厕所地址:{{address}}</view>
+<view class='assess-body'>
+    <view class='assess-title'>对厕所评价</view>
+    <view class='assess-star'>
+      <view class='star-wrap'>
+        <view class='star-item' wx:for="{{stars}}" wx:key="" style='background:url("{{item.flag==1?item.lightImg:item.blackImg}}") no-repeat top;background-size:100%;' data-index="{{index}}" bindtap='starClick'></view>
+      </view>
+      <view class='star-desc'>{{starDesc}}</view>
+    </view>
+
+
+    <view class='assess-list'>
+   
+<view class='item-assess' wx:for='{{assessLists}}'       wx:for-index="index" wx:for-item="item" style='{{item.isSelected==true?"background-color:cornflowerblue;":""}} z-index:999;' bindtap='changColor' data-index='{{index}}' data-item='{{item}}'>{{item.comment}}</view>
+
+    
+    </view>
+
+
+<view class="action">
+        <view class="title">拍摄厕所周围环境，便于其他人寻找</view>
+        <view class="action-photo">
+        <block wx:for="{{picUrls}}" wx:key="{{item}}" wx:index="{{index}}">
+            <image src="{{item}}"><icon type="cancel" data-index="{{index}}" color="red" size="18" class ="del" bindtap="delPic" /></image>
+        </block>
+            <text class="add" bindtap="bindCamera">{{actionText}}</text>
+        </view>
+
+      
+
+
+
+
+
+
+
+
+
+    <textarea maxlength="-1" placeholder='回复' placeholder-class='place-assess' bindinput="bindUserCommentInput"></textarea>
+  </view>
+  <!-- <view class='assess-submint'>提交评价</view> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <view class="choose"> -->
+        <!-- <view class="title">请选择故障类型</view> 
+        <checkbox-group bindchange="checkboxChange" class="choose-grids">
+            <block wx:for="{{itemsValue}}" wx:key="{{item}}">
+                <!-- <view class="grid">
+                    <checkbox value="{{item.value}}" checked="{{item.checked}}" color="{{item.color}}" />{{item.value}}
+                </view> -->
+            <!-- </block>
+        </checkbox-group>        
+    </view> --> -->
+    
+        <!-- <view class="action-input"> -->
+            <!-- <input bindinput="numberChange" name="number" placeholder="车牌号（车牌损坏不用填）" /> -->
+            <!-- <input bindinput="descChange" name="desc" placeholder="备注" />             -->
+        <!-- </view> -->
+        <view class="action-submit">
+            <button class="submit-btn" type="default" loading="{{loading}}" bindtap="formSubmit" style="background-color: {{btnBgc}}">提交</button>
+        </view>
+    </view>
+</view>
+
