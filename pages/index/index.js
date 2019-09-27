@@ -82,7 +82,7 @@ Page({
             "latitude":res.latitude,
             "longitude": res.longitude}
         })
-        QQMapSDK.qqMapSDKSearch('厕所', that.data.userLocation, function () {
+        QQMapSDK.qqMapSDKSearch('停车场', that.data.userLocation, function () {
           that.setData({
             //markers: MarkerHelper.newMarkers,
             markers: QQMapSDK.wholeMarkers,

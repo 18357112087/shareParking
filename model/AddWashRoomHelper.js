@@ -28,12 +28,6 @@ module.exports.uploadWashroomToTecentCloud = function(){
       console.log(res)
     }
   })
-
-
-
-
-
- 
 }
 
 module.exports.uploadWashroom = function (title,address, lat,lon) {
